@@ -1,1 +1,22 @@
-<p>{{{block.copy}}}</p>
+<!-- <p>{{{block.copy}}}</p> -->
+<p>{{parseCopy}}</p>
+
+<script>
+export default {
+
+  data () {
+    block: {
+      copy: 'no'
+    }
+  },
+
+        computed: {
+          parseCopy: function(){
+
+            return block.copy
+          }
+        }
+
+}
+
+</script>

@@ -7,12 +7,12 @@ const Page = requireUncached('../src/components/page/render.html')
 
 export async function render() {
   const data = await rp({
-      uri: 'https://interactive.guim.co.uk/docsdata-test/1k_q21NP5tb2YJmghHmO9WSa_0hLOcJn9BcB0jJHg6Ok.json',
+      uri: 'https://interactive.guim.co.uk/docsdata-test/1P-6YwejZEA68ZzJVsJV0_jWJL-7uYOwEzFRi_UTSdfU.json',
       json: true
   });
 
   const html = Page.render({
-      serverside: true, 
+      serverside: true,
       blocks: data.blocks
   });
 
