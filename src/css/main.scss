@@ -57,53 +57,71 @@
 
 	
 
-	.gv-page-margin-wrap {
+	.gv-block {
+
+         position: relative;
+         margin: 0;
+         padding: 0;
+         max-width: none;
+         height: auto;
+
+
+        &.gv-full-width {
+             
+        width: 100%;
+
+        }
+
+        &.gv-page-width {
+
 		margin: 0 auto;
-		background: #fff;
 		@each $bp in (phablet, tablet, desktop, leftCol, wide) {
         	@include mq($bp) {
             	max-width: map-get($mq-breakpoints, $bp);
         	}
     	}
+
+        }
+
+
+
+
+        .gv-main-column {
+
+            margin: 0 10px;
+            max-width: 620px;
+            // padding: 0 10px 20px 10px;
+
+            @include mq(mobileLandscape) {
+                margin: 0 20px;
+            }
+
+            @include mq(phablet) {
+                margin: 0 20px;
+            }
+
+            @include mq(tablet) {
+                margin: 0 0 0 20px;
+
+            }
+
+            @include mq(leftCol) {
+                margin: 0 0 0 180px;
+            }
+
+            @include mq(wide) {
+                margin: 0 0 0 260px;
+            }
+
+        }
+
+        
 	}
 
 
 	p {
 
-		margin: 0 auto;
-		max-width: 620px;
-		padding: 0 10px 20px 10px;
-
-		@include mq(mobileLandscape) {
-            	padding: 0 20px 20px 20px;
-        }
-
-        @include mq(phablet) {
-            	margin: 0 auto;
-            	padding: 0 0 20px 0;
-        }
-
-        @include mq(tablet) {
-            	margin: 0 auto 0 20px;
-
-        }
-
-        @include mq(leftCol) {
-            	margin: 0 auto 0 180px;
-        }
-
-        @include mq(wide) {
-            	margin: 0 auto 0 260px;
-        }
-
-        // &.intro {
-        // 	background: #ff0000;
-        // 	position: absolute;
-        // 	width: 140px;
-        // 	margin-left: 10px;
-        // }
-
-		
+        padding-bottom: 10px;
 
 	}
 
