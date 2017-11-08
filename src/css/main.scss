@@ -87,7 +87,6 @@
 
 
         .gv-main-column {
-
             margin: 0 10px;
             max-width: 620px;
             // padding: 0 10px 20px 10px;
@@ -116,14 +115,38 @@
         }
 
         
+        .gv-left-column {
+            @include mq(leftCol) {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            margin: 0;
+            width: 140px;
+            }
+            @include mq(wide) {
+                width: 220px;
+            }
+        }
+
+        
 	}
 
 
 	p {
 
+        font-family: $f-serif-text;
+        font-size: 16px;
+        line-height: 24px;
         padding-bottom: 10px;
 
 	}
+
+    h2 {
+        font-family: $f-serif-headline;
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 10px;
+    }
 
 
 
