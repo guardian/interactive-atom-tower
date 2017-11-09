@@ -55,7 +55,7 @@
 		right: 0;
 	}
 
-	
+
 
 	.gv-block {
 
@@ -67,7 +67,7 @@
 
 
         &.gv-full-width {
-             
+
         width: 100%;
 
         }
@@ -114,7 +114,7 @@
 
         }
 
-        
+
         .gv-left-column {
             @include mq(leftCol) {
             position: absolute;
@@ -128,7 +128,7 @@
             }
         }
 
-        
+
 	}
 
 
