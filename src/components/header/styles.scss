@@ -1,0 +1,90 @@
+.gv-header-wrapper {
+  background-color: blue;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.gv-header-wrapper::before {
+  content: "";
+  display: block;
+  background-repeat: no-repeat;
+  background-image: url('<%= path %>/assets/placeholder-header-mobile.png');
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  position: absolute;
+  z-index: 40;
+  @include mq($from: tablet) {
+    background-image: url('<%= path %>/assets/placeholder-header.png');
+  }
+}
+
+.gv-headline__image {
+  content: "";
+  position: relative;
+  display: block;
+  background: url('<%= path %>/assets/logo.svg');
+  background-size: 55px 332px;
+  background-repeat: no-repeat;
+  z-index: 50;
+  width: 55px;
+  height: 332px;
+  top: 52px;
+  left: 20%;
+
+  @include mq($from: mobileMedium) {
+    top: 64px;
+    left: 25%;
+  }
+  @include mq($from: tablet) {
+    background-size: 80px 481px;
+    width: 80px;
+    height: 481px;
+    top: 10vh;
+    left: 60%;
+  }
+  @include mq($from: desktop) {
+    left: 58%;
+  }
+}
+
+.gv-standfirst  {
+  content: "";
+  position: relative;
+  display: block;
+  background: url('<%= path %>/assets/standfirst.svg');
+  background-size: 142px 42px;
+  background-repeat: no-repeat;
+  z-index: 51;
+  width: 142px;
+  height: 42px;
+  opacity: 0.6;
+  top: -64px;
+
+  @include mq($from: tablet) {
+    left: 60%;
+  }
+  @include mq($from: desktop) {
+    left: 65%;
+  }
+  @include mq($from: wide) {
+    left: 70%;
+  }
+}
+
+
+
+// display: block;
+// background-color: #111111;
+// background-repeat: no-repeat;
+// background-image: url('<%= path %>/assets/placeholder-header-mobile.png');
+// background-position: center;
+// background-size: cover;
+// height: 1000px;
+// width: 100%;
+// position: absolute;
+// z-index: 40;
+// @include mq($from: tablet) {
+//   background-image: url('<%= path %>/assets/placeholder-header.png');
+// }
