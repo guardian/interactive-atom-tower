@@ -72,19 +72,3 @@
     left: 70%;
   }
 }
-
-
-
-// display: block;
-// background-color: #111111;
-// background-repeat: no-repeat;
-// background-image: url('<%= path %>/assets/placeholder-header-mobile.png');
-// background-position: center;
-// background-size: cover;
-// height: 1000px;
-// width: 100%;
-// position: absolute;
-// z-index: 40;
-// @include mq($from: tablet) {
-//   background-image: url('<%= path %>/assets/placeholder-header.png');
-// }
