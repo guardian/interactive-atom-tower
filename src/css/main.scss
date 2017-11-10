@@ -12,9 +12,11 @@
     margin: 0 !important;
 }
 
+@import "../components/copy/styles";
 @import "../components/page/styles";
 @import "../components/image/styles";
 @import "../components/header/styles";
+@import "../components/subheader/styles";
 
 
 @import "../components/youtube-player/styles";
@@ -130,32 +132,6 @@
         }
 
 
-	}
-
-
-	p {
-
-        font-family: $f-serif-text;
-        font-size: 16px;
-        line-height: 24px;
-        padding-bottom: 10px;
-
-	}
-
-    h2 {
-        font-family: $f-serif-headline;
-        font-size: 18px;
-        line-height: 24px;
-        padding-bottom: 10px;
-    }
-
-
-
-
-
-
-	.intro {
-		font-weight: bold;
 	}
 
 }

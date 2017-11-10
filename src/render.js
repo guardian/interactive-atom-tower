@@ -12,6 +12,8 @@ export async function render() {
       json: true
   });
 
+  console.log(data.blocks);
+
   const html = Page.render({
       serverside: true,
       blocks: data.blocks
