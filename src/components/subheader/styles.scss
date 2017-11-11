@@ -1,18 +1,72 @@
 .gv-subheader {
   width: 100%;
-  height: 0;
+  height: 140px;
   overflow: visible;
   position: relative;
+
+  @include mq(mobileMedium) {
+    height: 160px;
+  }
+
+  @include mq(desktop) {
+    height: 0;
+  }
 }
 
 .gv-subheader-image {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: -60px;
+
+  img {
+    width: 75%;
+    height: 75%;
+    padding-top: 8%;
+
+    @include mq(mobileMedium) {
+      padding-top: 18%;
+    }
+  }
+
+  @include mq(tablet) {
+    top: 0px;
+    right: 0px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      padding-top: 0%;
+    }
+  }
 }
+
+
 
 .gv-subheader-logo {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  bottom: 0px;
+  left: 10px;
+
+  @include mq($from: mobileLandscape) {
+    left: 20px
+  }
+
+  img {
+    max-width: 65%;
+
+    @include mq($from: mobileMedium) {
+      max-width: 75%;
+    }
+  }
+
+  @include mq($from: desktop) {
+      position: absolute;
+      left: initial;
+      transform: rotate(-90deg);
+      top: 0px;
+      right: -60px;
+      padding-left: 6px;
+
+  }
+
 }
