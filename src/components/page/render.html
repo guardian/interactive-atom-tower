@@ -4,6 +4,8 @@
     <Copy block={{block}}></Copy>
   {{elseif block.block.toLowerCase() === 'photo'}}
     <Image block={{block}}></Image>
+  {{elseif block.block.toLowerCase() === 'grid'}}
+    <Grid block={{block}}></Grid>
   {{elseif block.block.toLowerCase() === 'header'}}
     <Header block={{block}}></Header>
   {{elseif block.block.toLowerCase() === 'subheader'}}
@@ -21,6 +23,7 @@ const requireUncached = require('require-uncached');
 const Image = requireUncached('../image/render.html')
 const Copy = requireUncached('../copy/render.html')
 const YouTube = requireUncached('../youtube-player/index.html')
+const Grid = requireUncached('../grid/render.html')
 const Header = requireUncached('../header/render.html')
 const Subheader = requireUncached('../subheader/render.html')
 const Iframe = requireUncached('../iframe/render.html')
@@ -33,6 +36,7 @@ export default {
           Image: Image,
           Copy: Copy,
           YouTube: YouTube,
+          Grid: Grid,
           Header: Header,
           Subheader: Subheader,
           Iframe: Iframe

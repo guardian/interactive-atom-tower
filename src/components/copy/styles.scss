@@ -8,14 +8,33 @@
 
   }
 
-    h2 {
-        font-family: $f-serif-headline;
-        font-size: 18px;
-        line-height: 24px;
-        padding-bottom: 10px;
+
+
+
+  h2 {
+      font-family: $f-serif-headline;
+      font-size: 18px;
+      line-height: 24px;
+      padding-bottom: 10px;
+  }
+
+
+
+
+  .dropcap {
+    p:first-child:first-letter {
+      display: inline-block;
+      background-image: url('<%= path %>/assets/dropcap.svg');
+      float: left;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 6px;
+      margin-right: 8px;
+      padding-right: 60px;
+      line-height: 90px;
+      font-size: 0px;
     }
-
-
+  }
 
 
 

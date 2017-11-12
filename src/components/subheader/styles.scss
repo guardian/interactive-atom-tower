@@ -1,11 +1,11 @@
 .gv-subheader {
   width: 100%;
-  height: 140px;
+  height: 130px;
   overflow: visible;
   position: relative;
 
   @include mq(mobileMedium) {
-    height: 160px;
+    height: 140px;
   }
 
   @include mq(desktop) {
@@ -21,10 +21,9 @@
   img {
     width: 75%;
     height: 75%;
-    padding-top: 8%;
 
     @include mq(mobileMedium) {
-      padding-top: 18%;
+      padding-top: 5%;
     }
   }
 

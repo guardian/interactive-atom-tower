@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="113px" viewBox="0 0 75 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>dropcap</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dropcap" fill="#767676">
+            <path d="M26,112.28 C52.72,112.28 64.72,98.68 64.72,75.16 L64.72,20.6 L74.32,17.88 L74.32,0.12 L17.84,0.12 L17.84,17.88 L28.08,20.6 L28.08,73.24 C28.08,83.96 22.48,87.48 13.36,87.48 C6.8,87.48 3.6,86.52 0.24,85.56 L0.24,107 C5.36,109.4 11.6,112.28 26,112.28 Z" id="J"></path>
+        </g>
+    </g>
+</svg>
