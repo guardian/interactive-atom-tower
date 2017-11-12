@@ -16,12 +16,7 @@
     background: tomato;
   }
 
-  .grid-5 {
-    background: lightgreen;
-  }
-
   .grid-2 {
-    text-align: left;
     background: deepskyblue;
   }
 
@@ -33,17 +28,48 @@
     background: hotpink;
   }
 
-  @include mq(mobile) {
-    .grid-secondary { flex: 2 auto; }
-    .grid-2    { order: 1; }
+  .grid-5 {
+    background: lightgreen;
   }
 
-  @include mq(desktop) {
-    .grid-2    { flex: 3 0px; }
-    .grid-3    { order: 1; }
-    .grid-2    { order: 2; }
-    .grid-4    { order: 3; }
-    .grid-5    { order: 4; }
+  @include mq($from: mobile) {
+    .grid-share {
+      flex: 1 40%;
+      max-width: 50%;
+    }
+    .grid-share-2 {
+      flex: 1 40%;
+      max-width: 50%;
+    }
+  }
+
+  @include mq($from: desktop) {
+    .grid-share {
+      flex: 1 100%;
+      max-width: 640px;
+    }
+    .grid-share-2 {
+      flex: 1 10%;
+    }
+
+    .grid-1    {
+      order: 2;
+      flex: 1 60%;
+    }
+    .grid-2    {
+      order: 1;
+      flex: 1 40%;
+      max-width: 340px;
+    }
+    .grid-3    {
+      order: 3;
+    }
+    .grid-4    {
+      order: 4;
+    }
+    .grid-5    {
+      order: 5;
+    }
   }
 
   body {
