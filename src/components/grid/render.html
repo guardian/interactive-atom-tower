@@ -1,9 +1,31 @@
 <div class="gv-block gv-page-width">
   <div class="grid-wrapper">
-    <div class="grid-main grid-1">Video here</div>
-    <div class="grid-share grid-2">Secondary</div>
-    <div class="grid-share grid-3">Main image</div>
-    <div class="grid-share-2 grid-4">Secondary</div>
-    <div class="grid-share-2 grid-5">Secondary</div>
+    {{#each block.gridBlocks as gridBlock}}
+    	<div class="{{gridBlock.class}}">
+	   		{{#if gridBlock.block === "video"}}
+	   			<Video block={{gridBlock}} serverside={{serverside}} controls="true" loop="true"></Video>
+	   		{{else}}
+	    		<Image block={{gridBlock}}></Image>
+	   		{{/if}}
+   		</div>
+    {{/each}}
   </div>
 </div>
+
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          Image: Image,
+          Video: Video
+        },
+
+}
+
+</script>

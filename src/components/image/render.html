@@ -1,22 +1,9 @@
-<div class='visual-element--image visual-element--{{block.weight ? block.weight : 'inline'}}'>
-
-
-
-  {{#each block.sources as image, i}}
-  <div class='visual-image-{{block.sources.length}}'>
-    <picture>
-      {{#each image.sizes.reverse() as size, i}}
-        {{#if i == image.sizes.length-1}}
-          <source srcset="{{image.source}}/{{size}}.jpg">
-
-        {{else}}
-          <source media="(min-width: {{size}}px)"
-            srcset="{{image.source}}/{{size}}.jpg">
-        {{/if}}
-      {{/each}}
-      <img src="{{image.source}}/{{image.sizes.reverse()[0]}}.jpg" alt="">
-
-    </picture>
-  </div>
-  {{/each}}
+<div class='visual-element--image visual-element--{{block.weight ? block.weight : ' inline '}}'>
+    <div class='visual-image'>
+        <picture>
+            <source media="(min-width: 700px)" srcset="{{block.desktopSrc}}">
+              <source srcset="{{block.mobileSrc}}">
+            <img src="{{block.desktopSrc}}" alt="">
+        </picture>
+    </div>
 </div>

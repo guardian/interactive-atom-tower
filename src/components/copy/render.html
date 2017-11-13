@@ -5,3 +5,21 @@
   	{{/each}}
   </div>
 </div>
+
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    oncreate() {
+
+        },
+        components:{
+          Image: Image,
+          Video: Video
+        },
+
+}
+
+</script>

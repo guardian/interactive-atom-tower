@@ -3,17 +3,18 @@
     display: flex;
     flex-flow: row wrap;
     font-weight: bold;
-    text-align: center;
+    overflow: hidden;
   }
 
   .grid-wrapper > * {
-    padding: 10px;
     flex: 1 100%;
     outline: 4px solid #EAEAEA;
+    overflow: hidden;
   }
 
   .grid-1 {
     background: tomato;
+    line-height: 0;
   }
 
   .grid-2 {
