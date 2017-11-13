@@ -9,28 +9,29 @@
   .grid-wrapper > * {
     flex: 1 100%;
     outline: 4px solid #EAEAEA;
+    background-color: #000;
     overflow: hidden;
+    position: relative;
   }
 
   .grid-1 {
-    background: tomato;
-    line-height: 0;
+
   }
 
   .grid-2 {
-    background: deepskyblue;
+    
   }
 
   .grid-3 {
-    background: gold;
+    
   }
 
   .grid-4 {
-    background: hotpink;
+    
   }
 
   .grid-5 {
-    background: lightgreen;
+    
   }
 
   @include mq($from: mobile) {

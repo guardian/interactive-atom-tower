@@ -3,7 +3,7 @@
     {{#each block.gridBlocks as gridBlock}}
     	<div class="{{gridBlock.class}}">
 	   		{{#if gridBlock.block === "video"}}
-	   			<Video block={{gridBlock}} serverside={{serverside}} controls="true" loop="true"></Video>
+	   			<Video block={{gridBlock}} serverside={{serverside}} controls="false" loop="true"></Video>
 	   		{{else}}
 	    		<Image block={{gridBlock}}></Image>
 	   		{{/if}}
