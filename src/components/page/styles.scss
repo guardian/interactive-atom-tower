@@ -46,12 +46,18 @@ h1.content__headline {
     }
 
     .visual-element--immersive {
-        max-width: 620px;
-        margin-left: 0;
+        // max-width: 620px;
+        // margin-left: 0;
 
-        @include mq(leftCol) {
-            max-width: 1080px;
-        }
+        
+
+        // @include mq(leftCol) {
+        //     max-width: 1140px;
+        // }
+
+        // @include mq(wide) {
+        //     max-width: 1300px;
+        // }
     }
 
     .visual-element--grid {
