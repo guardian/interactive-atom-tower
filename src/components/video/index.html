@@ -1,44 +1,46 @@
 {{#if serverside}}
     {{#if block.weight === "grid"}}
-        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}">
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}">
         </div>
     {{else}}
         <div class="gv-block gv-page-width">
-            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}">
+            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}">
+            </div>
+        </div>
+    {{/if}} 
+{{else}}
+    <video ref:video webkit-playsinline muted loop={{loop}}>
+        {{#if shouldLoad}}
+        <source src="{{bestSource}}" /> {{/if}}
+    </video>
+    {{#if controls}}
+        <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
+            <svg class='g-video-timer' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" on:click="playPause(event)">
+                <circle class='g-timer-btn-bg' cx="50" cy="50" r="44" />
+                <circle class='g-timer-bg' cx="50" cy="50" r="44" />
+                <circle class='g-timer-anim' cx="50" cy="50" r="44" stroke-dashoffset="{{timerPerc}}"/>
+                <polygon class='g-icon-pause' points="31.531,45.383 31.531,36.148 66.23,36.148 68.469,38.387 68.469,45.383 " />
+                <polygon class='g-icon-pause' points="33.77,63.852 31.531,61.613 31.531,54.617 68.469,54.617 68.469,63.852 " />
+                <polygon class='g-icon-play' points="50.779,73.109 65.4,37.602 64.445,36.364 35.514,36.364 34.604,37.608 49.221,73.109 " />
+            </svg>
+            <div class="g-vam-video-btn-label" on:click="unmute(event)" ref:playSound>
+                <span class="g-muted-text">Play with sound</span>
             </div>
         </div>
     {{/if}}
-{{else}}
-<video ref:video webkit-playsinline muted loop={{loop}}>
-    {{#if shouldLoad}}
-    <source src="{{bestSource}}" /> {{/if}}
-</video>
-<!-- {{#if controls}} -->
-    <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
-        <svg class='g-video-timer' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" on:click="playPause(event)">
-            <circle class='g-timer-btn-bg' cx="50" cy="50" r="44" />
-            <circle class='g-timer-bg' cx="50" cy="50" r="44" />
-            <circle class='g-timer-anim' cx="50" cy="50" r="44" stroke-dashoffset="{{timerPerc}}"/>
-            <polygon class='g-icon-pause' points="31.531,45.383 31.531,36.148 66.23,36.148 68.469,38.387 68.469,45.383 " />
-            <polygon class='g-icon-pause' points="33.77,63.852 31.531,61.613 31.531,54.617 68.469,54.617 68.469,63.852 " />
-            <polygon class='g-icon-play' points="50.779,73.109 65.4,37.602 64.445,36.364 35.514,36.364 34.604,37.608 49.221,73.109 " />
-        </svg>
-        <div class="g-vam-video-btn-label" on:click="unmute(event)" ref:playSound>
-            <span class="g-muted-text">Play with sound</span>
-        </div>
-    </div>
-<!-- {{/if}} -->
 {{/if}}
 <script>
 export default {
     oncreate() {
         if (window.innerWidth >= 620) {
             this.set({
-                "bestSource": this.get("desktopSrc")
+                "bestSource": this.get("desktopSrc"),
+                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls"))
             });
         } else {
             this.set({
-                "bestSource": this.get("mobileSrc")
+                "bestSource": this.get("mobileSrc"),
+                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls"))
             });
         }
 
