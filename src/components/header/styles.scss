@@ -1,23 +1,22 @@
 .gv-header-wrapper {
-  background-color: blue;
-  height: 90vh;
   margin: 0 auto;
+  overflow: hidden;
+  height: calc(100vw * (9/16));
+  
+  .visual-element--video {
+    z-index: 1000;
+  }
+}
+
+.gv-header {
+  position: absolute;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
 }
 
 .gv-header-wrapper::before {
-  content: "";
-  display: block;
-  background-repeat: no-repeat;
-  background-image: url('<%= path %>/assets/placeholder-header-mobile.png');
-  background-position: center;
-  background-size: cover;
-  height: 90vh;
-  width: 100%;
-  position: absolute;
-  z-index: 40;
-  @include mq($from: tablet) {
-    background-image: url('<%= path %>/assets/placeholder-header.png');
-  }
+
 }
 
 .gv-headline__image {

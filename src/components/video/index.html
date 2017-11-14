@@ -1,17 +1,18 @@
 {{#if serverside}}
     {{#if block.weight === "grid"}}
-        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}">
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}">
         </div>
     {{else}}
         <div class="gv-block gv-page-width">
-            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}">
+            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}">
             </div>
         </div>
     {{/if}} 
 {{else}}
     <video ref:video webkit-playsinline muted loop={{loop}}>
         {{#if shouldLoad}}
-        <source src="{{bestSource}}" /> {{/if}}
+            <source src="{{bestSource}}" />
+        {{/if}}
     </video>
     {{#if controls}}
         <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
@@ -32,15 +33,18 @@
 <script>
 export default {
     oncreate() {
+        console.log(this.get("mobileSrc"))
         if (window.innerWidth >= 620) {
             this.set({
                 "bestSource": this.get("desktopSrc"),
-                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls"))
+                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
+                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop"))
             });
         } else {
             this.set({
                 "bestSource": this.get("mobileSrc"),
-                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls"))
+                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
+                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop"))
             });
         }
 

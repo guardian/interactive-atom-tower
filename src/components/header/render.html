@@ -1,11 +1,41 @@
 <div class="gv-header-wrapper">
+    <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true"></Video>
     <div class="gv-header">
-      <div class="gv-headline__image"></div>
-      <h1 class='gv-headline'>{{block.copy}}</h1>
+        <div class="gv-headline__image">
+            
+        </div>
+        <h1 class='gv-headline'>{{block.copy}}</h1>
     </div>
 </div>
 <div class="gv-block gv-page-width">
-  <div class="gv-main-column">
-    <div class="gv-standfirst"></div>
-  </div>
+    <div class="gv-main-column">
+        <div class="gv-standfirst"></div>
+    </div>
 </div>
+<script>
+const requireUncached = require('require-uncached');
+const Image = requireUncached('../image/render.html');
+const Video = requireUncached('../video/index.html');
+
+export default {
+    data() {
+        return {
+            videoBlock: {
+                block: "video",
+                mobileSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/Tower_loop_1_1080.mp4",
+                desktopSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/Tower_loop_1_1080.mp4",
+                weight: "grid",
+                loop: true
+            }
+        }
+    },
+    oncreate() {
+
+    },
+    components: {
+        Image: Image,
+        Video: Video
+    },
+
+}
+</script>
