@@ -9,73 +9,70 @@
   .grid-wrapper > * {
     flex: 1 100%;
     outline: 4px solid #EAEAEA;
+    box-sizing: border-box;
     background-color: #000;
     overflow: hidden;
     position: relative;
   }
 
   .grid-1 {
-
+    display: none;
   }
 
   .grid-2 {
-    
+    order: 5;
   }
 
   .grid-3 {
-    
+
   }
 
   .grid-4 {
-    
   }
 
   .grid-5 {
-    
   }
 
-  @include mq($from: mobile) {
-    .grid-share {
-      flex: 1 40%;
-      max-width: 50%;
-    }
-    .grid-share-2 {
-      flex: 1 40%;
-      max-width: 50%;
-    }
+  .grid-portrait {
+    flex: 50%;
+    // width: 50%;
   }
+
 
   @include mq($from: desktop) {
-    .grid-share {
-      flex: 1 100%;
-      max-width: 640px;
-    }
-    .grid-share-2 {
-      flex: 1 10%;
+    .grid-portrait {
+      flex: 1 1 auto;
+      width: 330px;
     }
 
     .grid-1    {
+      display: flex;
       order: 2;
-      flex: 1 60%;
+      flex: 1 1 auto;
+      width: 800px;
+      // max-width: calc(60%);
     }
     .grid-2    {
       order: 1;
-      flex: 1 40%;
-      max-width: 340px;
+      flex: 1 1 auto;
+      width: 500px;
+      // max-width: calc(40%);
     }
     .grid-3    {
       order: 3;
+      flex: 1 1 auto;
+      width: 640px;
     }
     .grid-4    {
       order: 4;
+      // flex: 1 1 auto;
+      // width: 330px;
     }
     .grid-5    {
       order: 5;
+      // flex: 1 1 auto;
+      // width: 330px;
     }
-  }
-
-  body {
-    padding: 2em;
   }
 
 }
