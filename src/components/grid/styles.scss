@@ -4,6 +4,21 @@
     flex-flow: row wrap;
     font-weight: bold;
     overflow: hidden;
+
+    img, video {
+      min-width: 100%;
+      min-height: 100%;
+      object-position: 50% 50%;
+      object-fit: cover;
+    }
+
+    .visual-element--image {
+      height: 100%;
+
+      .visual-image {
+        height: 100%;
+      }
+    }
   }
 
   .grid-wrapper > * {
@@ -48,28 +63,33 @@
     .grid-1    {
       display: flex;
       order: 2;
+      height: 500px;
       flex: 1 1 auto;
       width: 800px;
       // max-width: calc(60%);
     }
     .grid-2    {
       order: 1;
+      height: 500px;
       flex: 1 1 auto;
       width: 500px;
       // max-width: calc(40%);
     }
     .grid-3    {
       order: 3;
+      height: 500px;
       flex: 1 1 auto;
       width: 640px;
     }
     .grid-4    {
       order: 4;
+      height: 500px;
       // flex: 1 1 auto;
       // width: 330px;
     }
     .grid-5    {
       order: 5;
+      height: 500px;
       // flex: 1 1 auto;
       // width: 330px;
     }
