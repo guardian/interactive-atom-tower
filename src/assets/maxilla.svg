@@ -4,10 +4,10 @@
 	 viewBox="0 0 160 162" style="enable-background:new 0 0 160 162;" xml:space="preserve">
 <g id="Layer_1">
 	<title>floor-14</title>
-	<path id="Rectangle" style="fill:#EAEAEA;" d="M-0.502,161.769H160v-4.462H-0.502V161.769z"/>
+	<path id="Rectangle" style="fill:#EAEAEA;" d="M0.498,161.769H160v-4.462H0.498V161.769z"/>
 </g>
 <g id="Layer_2">
-	<rect x="3" y="90.808" style="fill:#DCDCDC;" width="55.379" height="14.767"/>
-	<rect x="3" y="88.808" style="fill:none;stroke:#EAEAEA;stroke-width:4;" width="55.379" height="69.5"/>
+	<rect x="2" y="92.808" style="fill:#DCDCDC;" width="55.379" height="14.767"/>
+	<rect x="2" y="90.808" style="fill:none;stroke:#EAEAEA;stroke-width:4;" width="55.379" height="69.5"/>
 </g>
 </svg>
