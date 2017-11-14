@@ -2,7 +2,6 @@
   .grid-wrapper {
     display: flex;
     flex-flow: row wrap;
-    font-weight: bold;
     overflow: hidden;
 
     img, video {
@@ -22,12 +21,14 @@
   }
 
   .grid-wrapper > * {
-    flex: 1 100%;
+    flex: 1 1 100%;
     outline: 4px solid #EAEAEA;
     box-sizing: border-box;
     background-color: #000;
-    overflow: hidden;
-    position: relative;
+
+    @include mq($from: desktop) {
+      position: relative;
+    }
   }
 
   .grid-1 {
@@ -53,67 +54,104 @@
   }
 
   @include mq($from: tablet) {
-    .grid-portrait {
-      flex: 1 1 33.33333%;
-    }
+
     .grid-2    {
-      order: 2;
-      flex: 1 1 33.33333%;
+      order: 3;
+      flex: 1 1 40%;
+      height: 200px;
     }
+
     .grid-3    {
       order: 1;
     }
+
     .grid-4    {
-      order: 3;
-    }
-    .grid-5    {
       order: 4;
+    }
+
+    .grid-5    {
+      order: 5;
+    }
+
+    .grid-portrait {
+      flex: 1 1 30%;
+      height: 200px;
     }
   }
 
   @include mq($from: desktop) {
-    .grid-portrait {
-      flex: 1 1 30%;
+    .grid-1    {
+      display: flex;
+      order: 2;
+      flex: 1 1 60%;
+      height: 100%;
     }
     .grid-2    {
-      order: 2;
+      order: 1;
       flex: 1 1 40%;
+      height: 330px;
     }
     .grid-3    {
+      order: 3;
+      flex: 1 1 50%;
+      height: 100%;
+    }
+    .grid-portrait {
+      order: 5;
+      flex: 1 1 25%;
+      height: 275px;
+    }
+  }
+
+  @include mq($from: leftCol) {
+    .grid-1    {
+      flex: 1 1 60%;
+      height: 100%;
+    }
+    .grid-2    {
       order: 1;
-      flex: 1 1 100%;
+      flex: 1 1 40%;
+      height: 330px;
+    }
+    .grid-3    {
+      order: 3;
+      flex: 1 1 50%;
+      height: 100%;
+    }
+    .grid-portrait {
+      order: 5;
+      flex: 1 1 25%;
+      height: 320px;
     }
   }
 
 
-  @include mq($from: leftCol) {
+  @include mq($from: wide) {
     .grid-portrait {
       flex: 1 1 330px;
     }
 
     .grid-1    {
-      display: flex;
-      order: 2;
       flex: 1 1 800px;
-      height: 500px;
+      height: 446px;
     }
     .grid-2    {
       order: 1;
       flex: 1 1 500px;
-      height: 500px;
+      height: 446px;
     }
     .grid-3    {
       order: 3;
       flex: 1 1 640px;
-      height: 400px;
+      height: 356px;
     }
     .grid-4    {
       order: 4;
-      height: 400px;
+      height: 356px;
     }
     .grid-5    {
       order: 5;
-      height: 400px;
+      height: 356px;
     }
   }
 
