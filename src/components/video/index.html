@@ -1,6 +1,6 @@
 {{#if serverside}}
     {{#if block.weight === "grid"}}
-        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}">
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
         </div>
     {{else}}
         <div class="gv-block gv-page-width">
@@ -33,18 +33,19 @@
 <script>
 export default {
     oncreate() {
-        console.log(this.get("mobileSrc"))
         if (window.innerWidth >= 620) {
             this.set({
                 "bestSource": this.get("desktopSrc"),
                 "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
-                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop"))
+                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop")),
+                "header": JSON.parse(this.get("targetEl").getAttribute("data-header")),
             });
         } else {
             this.set({
                 "bestSource": this.get("mobileSrc"),
                 "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
-                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop"))
+                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop")),
+                "header": JSON.parse(this.get("targetEl").getAttribute("data-header")),
             });
         }
 
@@ -86,7 +87,7 @@ export default {
                         this.refs.video.load();
                     }
 
-                    if (bbox.top > 0 && bbox.bottom < window.innerHeight) {
+                    if ((this.get("header") && bbox.bottom > 0) || (bbox.top > 0 && bbox.bottom < window.innerHeight)) {
                         try {
                             if(!this.get("manuallyPaused")) {
                                 this.refs.video.play();
