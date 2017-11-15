@@ -25,12 +25,12 @@
   content: "";
   position: absolute;
   display: block;
-  background: url('<%= path %>/assets/logo.svg');
-  background-size: 55px 332px;
+  background: url('<%= path %>/assets/header-logo.svg');
+  background-size: 216px 375px;
   background-repeat: no-repeat;
   z-index: 1001;
-  width: 55px;
-  height: 332px;
+  width: 375px;
+  height: 216px;
   right: 60%;
   top: 72px;
 
@@ -48,12 +48,9 @@
   }
 
   @include mq($from: desktop) {
-    background-size: 80px 481px;
-    width: 80px;
-    height: 481px;
-  }
-
-  @include mq($from: desktop) {
+    background-size: auto;
+    width: 375px;
+    height: 216px;
     right: 36.5%;
   }
 }

@@ -41,12 +41,12 @@
 //   }
 // }
 
-
-
 .gv-subheader-logo {
   position: absolute;
   bottom: 0px;
   left: 10px;
+
+
 
   @include mq($from: mobileLandscape) {
     left: 20px
@@ -71,3 +71,7 @@
   }
 
 }
+
+.gv-subheader-logo_video-below {
+    top: -140px;
+  }
