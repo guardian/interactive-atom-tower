@@ -11,13 +11,17 @@
       object-fit: cover;
     }
 
-    .visual-element--image {
+    .visual-element--image, .visual-element--grid {
       height: 100%;
+      width: 100%;
 
       .visual-image {
         height: 100%;
+        width: 100%;
       }
     }
+
+    
   }
 
   .grid-wrapper > * {
