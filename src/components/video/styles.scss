@@ -2,6 +2,10 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    border: 4px solid #EAEAEA;
+    box-sizing: border-box;
+    line-height: 0;
+    margin-bottom: 24px !important;
 
     video {
         width: 100%;
