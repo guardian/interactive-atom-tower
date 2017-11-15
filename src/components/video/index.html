@@ -33,21 +33,21 @@
 <script>
 export default {
     oncreate() {
-        if (window.innerWidth >= 620) {
+        if (this.get("targetEl").clientWidth >= 620) {
             this.set({
-                "bestSource": this.get("desktopSrc"),
-                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
-                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop")),
-                "header": JSON.parse(this.get("targetEl").getAttribute("data-header")),
+                "bestSource": this.get("desktopSrc")
             });
         } else {
             this.set({
-                "bestSource": this.get("mobileSrc"),
-                "controls": JSON.parse(this.get("targetEl").getAttribute("data-controls")),
-                "loop": JSON.parse(this.get("targetEl").getAttribute("data-loop")),
-                "header": JSON.parse(this.get("targetEl").getAttribute("data-header")),
+                "bestSource": this.get("mobileSrc")
             });
         }
+
+        this.set({
+            "controls": this.get("targetEl").getAttribute("data-controls") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-controls")),
+            "loop": this.get("targetEl").getAttribute("data-loop") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-loop")),
+            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header")),
+        });
 
         window.requestAnimationFrame(() => {
             this.checkIfInView();
