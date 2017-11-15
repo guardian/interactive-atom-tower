@@ -9,7 +9,7 @@
         </div>
     {{/if}} 
 {{else}}
-    <video ref:video webkit-playsinline muted loop={{loop}}>
+    <video ref:video webkit-playsinline playsinline muted loop={{loop}}>
         {{#if shouldLoad}}
             <source src="{{bestSource}}" />
         {{/if}}

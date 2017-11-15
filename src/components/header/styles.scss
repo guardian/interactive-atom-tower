@@ -1,7 +1,9 @@
 .gv-header-wrapper {
   margin: 0 auto;
   overflow: hidden;
-  height: calc(100vw * (9/16));
+  @include mq(tablet) {
+    height: calc(100vw * (9/16));
+  }
 
   .visual-element--video {
     z-index: 1000;
@@ -29,20 +31,35 @@
   z-index: 1001;
   width: 55px;
   height: 332px;
-  right: 20%;
+  right: 60%;
+  top: 72px;
 
-  @include mq($from: mobileMedium) {
-    right: 25%;
-  }
   @include mq($from: tablet) {
     background-size: 80px 481px;
     width: 80px;
     height: 481px;
   }
-  @include mq($from: desktop) {
-    top: 10px;
+
+  @include mq($from: tablet) {
+    background-size: 80px 300px;
+    width: 80px;
+    height: 481px;
     right: 36.5%;
   }
+
+  @include mq($from: desktop) {
+    background-size: 80px 481px;
+    width: 80px;
+    height: 481px;
+  }
+
+  @include mq($from: desktop) {
+    right: 36.5%;
+  }
+}
+
+.gv-headline {
+  visibility: hidden;
 }
 
 .gv-standfirst  {

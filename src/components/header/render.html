@@ -1,7 +1,12 @@
 <div class="gv-header-wrapper">
-    <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true" header="true"></Video>
+    <div class="int-desktop-only">
+        <Video block={{videoBlock}} serverside={{serverside}} controls="false" loop="true" header="true"></Video>
+    </div>
+    <div class="int-mobile-only">
+        <Image block={{pictureBlock}} serverside={{serverside}}></Image>
+    </div>
     <div class="gv-header"></div>
-        <div class="gv-headline__image">
+    <div class="gv-headline__image">
         <h1 class='gv-headline'>{{block.copy}}</h1>
     </div>
 </div>
@@ -24,6 +29,12 @@ export default {
                 desktopSrc: "https://interactive.guim.co.uk/2017/11/tower_videos/Tower_loop_1_1080.mp4",
                 weight: "grid",
                 loop: true
+            },
+            pictureBlock: {
+                "block": "photo",
+                "weight": "immersive",
+                "mobileSrc": `<%= path %>/assets/placeholder-header-mobile.png`,
+                "desktopSrc": `<%= path %>/assets/placeholder-header-mobile.png`,
             }
         }
     },
