@@ -63,9 +63,9 @@
   @include mq($from: desktop) {
       position: absolute;
       left: initial;
-      transform: rotate(-90deg);
+      // transform: rotate(-90deg);
       top: 0px;
-      right: -60px;
+      left: 0px;
       padding-left: 6px;
 
   }
