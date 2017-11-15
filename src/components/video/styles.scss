@@ -7,6 +7,11 @@
     line-height: 0;
     margin-bottom: 24px !important;
 
+    .gv-header-wrapper & {
+        border: 0;
+        margin-bottom: 0 !important;
+    }
+
     video {
         width: 100%;
     }
