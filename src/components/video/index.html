@@ -9,7 +9,7 @@
         </div>
     {{/if}} 
 {{else}}
-    <video ref:video webkit-playsinline playsinline muted loop={{loop}}>
+    <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none">
         {{#if shouldLoad}}
             <source src="{{bestSource}}" />
         {{/if}}
@@ -105,6 +105,11 @@ export default {
                         });
 
                         this.refs.video.load();
+                        this.refs.video.play();
+                        
+                        window.requestAnimationFrame(() => {
+                            this.refs.video.pause();
+                        });
                     }
                 }
 
