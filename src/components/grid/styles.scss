@@ -21,7 +21,7 @@
       }
     }
 
-    
+
   }
 
   .grid-wrapper > * {
@@ -188,6 +188,7 @@
 
       .grid-image-2    {
         order: 1;
+        z-index: 999;
       }
 
       .grid-image-3   {
@@ -250,15 +251,15 @@
 
     @include mq($from: wide) {
       .grid-video    {
-        flex: 1 1 650px;
+        flex: 1 1 50%;
         height: 364px;
       }
       .grid-image-1   {
-        flex: 1 1 650px;
+        flex: 1 1 50%;
         height: 364px;
       }
       .grid-image-2    {
-        flex: 1 1 650px;
+        flex: 1 1 50%;
         height: 364px;
       }
       .grid-image-portrait {
