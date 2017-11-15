@@ -1,6 +1,7 @@
 .visual-element--video {
     overflow: hidden;
     position: relative;
+    width: 100%;
 
     video {
         width: 100%;
@@ -72,6 +73,7 @@
 
     &:hover {
     	cursor: pointer;
+        color: #ffbb00;
     }
     // .g-vam-video-playing & {
     //     display: none;

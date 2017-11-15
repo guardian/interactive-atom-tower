@@ -31,8 +31,21 @@
 
 
 .interactive-atom {
+
+    .int-mobile-only {
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+
+    .int-desktop-only {
+        display: block;
+        @include mq($until: tablet) {
+            display: none;
+        }
+    }
   
-  overflow: hidden;
+    overflow: hidden;
 
 	&:before, &:after {
 		content: '';
