@@ -7,6 +7,12 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+body {
+  background: #fff;
+}
+
+
+
 .l-footer {
   display: block !important;
 }
@@ -14,6 +20,12 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+
+    a, a:href {
+      color: #005689;
+      cursor: pointer;
+      text-decoration: none;
+    }
 }
 
 @import "../components/copy/styles";
