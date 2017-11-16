@@ -1,19 +1,21 @@
 {{#if serverside}}
     {{#if block.weight === "grid"}}
-        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
         </div>
     {{else}}
         <div class="gv-block gv-page-width">
-            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
+            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
             </div>
         </div>
     {{/if}}
 {{else}}
-    <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none">
-        {{#if shouldLoad}}
-            <source src="{{bestSource}}" />
-        {{/if}}
-    </video>
+    <div class="video-wrapper">
+        <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
+            {{#if shouldLoad}}
+                <source src="{{bestSource}}" />
+            {{/if}}
+        </video>
+    </div>
     {{#if controls}}
         <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
             <svg class='g-video-timer' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" on:click="playPause(event)">
@@ -46,8 +48,16 @@ export default {
         this.set({
             "controls": this.get("targetEl").getAttribute("data-controls") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-controls")),
             "loop": this.get("targetEl").getAttribute("data-loop") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-loop")),
-            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header")),
+            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header"))
         });
+
+        const poster = this.get("targetEl").getAttribute("data-poster");
+
+        if(poster) {
+            this.set({
+                "poster": poster
+            })
+        }
 
         window.requestAnimationFrame(() => {
             this.checkIfInView();

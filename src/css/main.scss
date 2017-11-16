@@ -7,6 +7,12 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+body {
+  background: #fff;
+}
+
+
+
 .l-footer {
   display: block !important;
 }
@@ -14,6 +20,14 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+
+
+}
+
+a:any-link {
+  color: #005689;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @import "../components/copy/styles";
@@ -45,6 +59,8 @@
 
     .int-desktop-only {
         display: block;
+        height: 100%;
+        width: 100%;
         @include mq($until: tablet) {
             display: none;
         }
@@ -151,6 +167,12 @@
             @include mq(wide) {
                 width: 220px;
             }
+        }
+
+        .gv-right-column {
+
+
+            width: 100%;
         }
 
 
