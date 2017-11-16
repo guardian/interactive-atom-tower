@@ -4,13 +4,14 @@
 
 .gv-subheader {
   width: 100%;
-  height: 130px;
+  // height: 130px;
   overflow: visible;
   position: relative;
+  height: 100%;
   padding-top: 40px;
 
   @include mq(mobileMedium) {
-    height: 140px;
+    // height: 140px;
   }
 
   @include mq(desktop) {
@@ -47,13 +48,33 @@
 // }
 
 .gv-subheader-logo {
-  position: absolute;
-  left: 20px;
+  position: relative;
+  left: 10px;
   top: 0px;
+  padding-bottom: 6px;
+  padding-top: 16px;
 
   img {
     max-width: 75%;
   }
+
+  img.desktop {
+    display: none;
+  }
+  @include mq($from: desktop) {
+    position: absolute;
+  }
+
+  @include mq($from: desktop) {
+    img.mobile {
+      display: none;
+    }
+    img.desktop {
+      display: block;
+    }
+  }
+
+
 
 
 
