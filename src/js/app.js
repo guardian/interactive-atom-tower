@@ -65,7 +65,7 @@ function share(title, shareURL, fbImg, twImg, hashTag) {
 }
 
 
-var shareFn = share('The tower next door: Life in the shadow of Grenfell', 'https://gu.com/p/7t2cg', '');
+var shareFn = share('The tower next door: Life #InTheShadowOfGrenfell', 'https://gu.com/p/7t2cg', '');
 [].slice.apply(document.querySelectorAll('.interactive-share')).forEach(shareEl => {
     var network = shareEl.getAttribute('data-network');
     shareEl.addEventListener('click',() => shareFn(network));
