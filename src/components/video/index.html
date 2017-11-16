@@ -9,11 +9,13 @@
         </div>
     {{/if}}
 {{else}}
-    <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
-        {{#if shouldLoad}}
-            <source src="{{bestSource}}" />
-        {{/if}}
-    </video>
+    <div class="video-wrapper">
+        <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
+            {{#if shouldLoad}}
+                <source src="{{bestSource}}" />
+            {{/if}}
+        </video>
+    </div>
     {{#if controls}}
         <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
             <svg class='g-video-timer' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" on:click="playPause(event)">
