@@ -7,7 +7,7 @@
             <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
             </div>
         </div>
-    {{/if}} 
+    {{/if}}
 {{else}}
     <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none">
         {{#if shouldLoad}}
@@ -106,7 +106,7 @@ export default {
 
                         this.refs.video.load();
                         this.refs.video.play();
-                        
+
                         window.requestAnimationFrame(() => {
                             this.refs.video.pause();
                         });
