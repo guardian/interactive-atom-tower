@@ -7,6 +7,10 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+.l-footer {
+  display: block !important;
+}
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
