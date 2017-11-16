@@ -4,7 +4,7 @@
   padding: 10px;
   position: relative;
 
-
+  @include fs-textSans(1);
 
   .badge {
     border-top: 1px dotted #ccc;
@@ -23,7 +23,8 @@
     overflow: hidden;
   }
 
-  .badge__label{
+  .badge__link{
+    display: block;
 
   }
 }

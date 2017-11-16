@@ -21,11 +21,13 @@ body {
 .interactive-atom {
     margin: 0 !important;
 
-    a, a:href {
-      color: #005689;
-      cursor: pointer;
-      text-decoration: none;
-    }
+
+}
+
+a:any-link {
+  color: #005689;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @import "../components/copy/styles";
