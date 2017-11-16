@@ -16,6 +16,8 @@
     <Iframe block={{block}}></Iframe>
   {{elseif block.block.toLowerCase() === 'youtube'}}
     <YouTube block={{block}} serverside={{serverside}}></YouTube>
+  {{elseif block.block.toLowerCase() === 'badge'}}
+    <Badge block={{block}} serverside={{serverside}}></Badge>
   {{/if}}
 {{/each}}
 
@@ -30,6 +32,7 @@ const Grid = requireUncached('../grid/render.html')
 const Header = requireUncached('../header/render.html')
 const Subheader = requireUncached('../subheader/render.html')
 const Iframe = requireUncached('../iframe/render.html')
+const Badge = requireUncached('../badge/render.html')
 
 export default {
     oncreate() {
@@ -43,7 +46,8 @@ export default {
           Grid: Grid,
           Header: Header,
           Subheader: Subheader,
-          Iframe: Iframe
+          Iframe: Iframe,
+          Badge: Badge
         },
 
 }
