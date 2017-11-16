@@ -58,27 +58,3 @@
 .gv-headline {
   visibility: hidden;
 }
-
-.gv-standfirst  {
-  content: "";
-  position: relative;
-  display: block;
-  background: url('<%= path %>/assets/standfirst.svg');
-  background-size: 142px 42px;
-  background-repeat: no-repeat;
-  z-index: 51;
-  width: 142px;
-  height: 42px;
-  opacity: 0.6;
-  top: -64px;
-
-  @include mq($from: tablet) {
-    left: 60%;
-  }
-  @include mq($from: desktop) {
-    left: 65%;
-  }
-  @include mq($from: wide) {
-    left: 70%;
-  }
-}
