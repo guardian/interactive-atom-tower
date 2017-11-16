@@ -55,23 +55,35 @@
   padding-top: 16px;
 
   img {
-    max-width: 75%;
+    max-width: 100%;
   }
 
   img.desktop {
     display: none;
   }
-  @include mq($from: desktop) {
-    position: absolute;
-  }
 
   @include mq($from: desktop) {
+    position: absolute;
+    top: -12px;
+
     img.mobile {
       display: none;
     }
+
     img.desktop {
       display: block;
+      max-width: 160px;
     }
+
+  }
+
+  @include mq($from: leftCol) {
+    left: 24px;
+
+    img.desktop {
+      max-width: 220px;
+    }
+
   }
 
 
