@@ -34,20 +34,15 @@
   content: "";
   position: absolute;
   display: block;
-  background: url('<%= path %>/assets/header-logo.svg');
-  background-size: 216px 375px;
+  background: url('<%= path %>/assets/header-logo-mobile.svg');
+  background-size: contain;
   background-repeat: no-repeat;
   z-index: 1001;
-  width: 375px;
-  height: 216px;
+  width: 126px;
+  height: 247px;
   right: 60%;
-  top: 72px;
+  top: 340px;
 
-  @include mq($from: tablet) {
-    background-size: 80px 481px;
-    width: 80px;
-    height: 481px;
-  }
 
   @include mq($from: tablet) {
     background-size: 80px 300px;
@@ -57,37 +52,24 @@
   }
 
   @include mq($from: desktop) {
-    background-size: auto;
-    width: 375px;
-    height: 216px;
-    right: 36.5%;
+    background: url('<%= path %>/assets/header-logo.svg');
+    background-size: contain;
+    width: 244px;
+    height: 140px;
+    top: calc(12vw * (9/16));
+
+  }
+  @include mq($from: leftCol) {
+    width: 278px;
+    height: 260px;
+  }
+
+  @include mq($from: wide) {
+    width: 316px;
+    height: 183px;
   }
 }
 
 .gv-headline {
   visibility: hidden;
-}
-
-.gv-standfirst  {
-  content: "";
-  position: relative;
-  display: block;
-  background: url('<%= path %>/assets/standfirst.svg');
-  background-size: 142px 42px;
-  background-repeat: no-repeat;
-  z-index: 51;
-  width: 142px;
-  height: 42px;
-  opacity: 0.6;
-  top: -64px;
-
-  @include mq($from: tablet) {
-    left: 60%;
-  }
-  @include mq($from: desktop) {
-    left: 65%;
-  }
-  @include mq($from: wide) {
-    left: 70%;
-  }
 }
