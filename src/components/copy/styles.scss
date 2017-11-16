@@ -36,10 +36,15 @@
     }
   }
 
-
-
-
   .author {
-    font-weight: bold;
+    padding-top: 6px;
+
+      p {
+        font-family: $f-serif-headline;
+        weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #767676;
+      }
   }
 }

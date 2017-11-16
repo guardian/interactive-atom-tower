@@ -1,8 +1,13 @@
+.gv-subheader:first-child {
+  padding-top: 12px;
+}
+
 .gv-subheader {
   width: 100%;
   height: 130px;
   overflow: visible;
   position: relative;
+  padding-top: 40px;
 
   @include mq(mobileMedium) {
     height: 140px;
@@ -43,35 +48,34 @@
 
 .gv-subheader-logo {
   position: absolute;
-  bottom: 0px;
-  left: 10px;
-
-
-
-  @include mq($from: mobileLandscape) {
-    left: 20px
-  }
+  left: 20px;
+  top: 0px;
 
   img {
-    max-width: 65%;
-
-    @include mq($from: mobileMedium) {
-      max-width: 75%;
-    }
+    max-width: 75%;
   }
 
-  @include mq($from: desktop) {
-      position: absolute;
-      left: initial;
-      // transform: rotate(-90deg);
-      top: 0px;
-      left: 0px;
-      padding-left: 6px;
 
-  }
+
+  // @include mq($from: mobileLandscape) {
+  //   left: 20px
+  // }
+
+  // img {
+  //   max-width: 65%;
+  //
+  //   @include mq($from: mobileMedium) {
+  //     max-width: 75%;
+  //   }
+  // }
+
+  // @include mq($from: desktop) {
+  //     position: absolute;
+  //     left: initial;
+  //     top: 0px;
+  //     left: 0px;
+  //     padding-left: 0px;
+  //
+  // }
 
 }
-
-.gv-subheader-logo_video-below {
-    top: -140px;
-  }

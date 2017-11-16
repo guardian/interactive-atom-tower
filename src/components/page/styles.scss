@@ -77,19 +77,4 @@ h1.content__headline {
             max-width: 880px;
         }
     }
-
-    p {
-        @include mq(leftCol) {
-            @include fs-bodyCopy(3);
-        }
-    }
-
-    p.intro {
-        font-size: 32px;
-        line-height: 34px;
-        margin-bottom: 20px;
-        font-weight: 200;
-        color: #005689;
-        font-family: "Guardian Egyptian Web", Georgia;
-    }
 }
