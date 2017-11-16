@@ -1,8 +1,21 @@
 .visual-element--image {
-  overflow: hidden;
+  position: relative;
+  padding-left: 40px;
+  height: 85vh;
   img {
-    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    height: 85vh;
+    top: 0px;
+    right: -140px;
+
+    @include mq($from: mobileMedium) {
+      right: -160px;
+    }
+    @include mq($from: mobileLandscape) {
+      right: 0px;
   }
+}
 }
 
 .visual-image-2 {

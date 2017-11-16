@@ -35,13 +35,22 @@
   position: absolute;
   display: block;
   background: url('<%= path %>/assets/header-logo-mobile.svg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 1001;
-  width: 126px;
-  height: 247px;
-  right: 60%;
-  top: 340px;
+  width: 106px;
+  height: 207px;
+  right: 56%;
+  top: calc(80vh * (9/16));
+
+  @include mq($from: mobileMedium) {
+    width: 126px;
+    height: 247px;
+  }
+
+  @include mq($from: mobileLandscape) {
+    right: 73%;
+  }
 
 
   @include mq($from: tablet) {
