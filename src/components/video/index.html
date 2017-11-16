@@ -1,15 +1,15 @@
 {{#if serverside}}
     {{#if block.weight === "grid"}}
-        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
+        <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
         </div>
     {{else}}
         <div class="gv-block gv-page-width">
-            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}}>
+            <div class="visual-element--video visual-element--{{block.weight ? block.weight : 'inline'}}" data-mobileSrc="{{block.mobileSrc}}" data-desktopSrc="{{block.desktopSrc}}" data-controls="{{controls}}" data-loop="{{loop}}" data-header={{header}} data-poster={{block.poster}}>
             </div>
         </div>
     {{/if}} 
 {{else}}
-    <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none">
+    <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
         {{#if shouldLoad}}
             <source src="{{bestSource}}" />
         {{/if}}
@@ -46,8 +46,16 @@ export default {
         this.set({
             "controls": this.get("targetEl").getAttribute("data-controls") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-controls")),
             "loop": this.get("targetEl").getAttribute("data-loop") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-loop")),
-            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header")),
+            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header"))
         });
+
+        const poster = this.get("targetEl").getAttribute("data-poster");
+
+        if(poster) {
+            this.set({
+                "poster": poster
+            })
+        }
 
         window.requestAnimationFrame(() => {
             this.checkIfInView();

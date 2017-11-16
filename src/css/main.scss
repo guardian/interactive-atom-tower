@@ -40,6 +40,8 @@
 
     .int-desktop-only {
         display: block;
+        height: 100%;
+        width: 100%;
         @include mq($until: tablet) {
             display: none;
         }
