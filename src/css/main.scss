@@ -18,8 +18,9 @@
 @import "../components/grid/styles";
 @import "../components/header/styles";
 @import "../components/subheader/styles";
-@import "../components/youtube-player/styles";
 @import "../components/video/styles";
+@import "../components/badge/styles";
+@import "../components/share/styles";
 
 
 // @each $bp in (tablet, desktop, wide) {
@@ -44,7 +45,7 @@
             display: none;
         }
     }
-  
+
     overflow: hidden;
 
 	&:before, &:after {

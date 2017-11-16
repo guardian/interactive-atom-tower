@@ -10,6 +10,7 @@
     <Video block={{block}} serverside={{serverside}} controls="true" loop="false" header="false"></Video>
   {{elseif block.block.toLowerCase() === 'header'}}
     <Header block={{block}} serverside={{serverside}}></Header>
+    <Share block={{block}} serverside={{serverside}}></Share>
   {{elseif block.block.toLowerCase() === 'subheader'}}
     <Subheader block={{block}}></Subheader>
   {{elseif block.block.toLowerCase() === 'iframe'}}
@@ -33,6 +34,7 @@ const Header = requireUncached('../header/render.html')
 const Subheader = requireUncached('../subheader/render.html')
 const Iframe = requireUncached('../iframe/render.html')
 const Badge = requireUncached('../badge/render.html')
+const Share = requireUncached('../share/render.html')
 
 export default {
     oncreate() {
@@ -47,7 +49,8 @@ export default {
           Header: Header,
           Subheader: Subheader,
           Iframe: Iframe,
-          Badge: Badge
+          Badge: Badge,
+          Share: Share
         },
 
 }
