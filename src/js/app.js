@@ -1,10 +1,11 @@
 import VideoPlayer from '../components/video/index.html'
 
 //initialise video player
-const VideoEls = document.querySelectorAll(".visual-element--video");
+const VideoEls = document.querySelectorAll(".visual-element--video[data-header=true]");
 let videoPlayers = [];
 
-[].slice.apply(VideoEls).forEach((el) => {
+[].slice.apply(VideoEls).forEach((el, i) => {
+    console.log(i)
     const player = new VideoPlayer({
     	target: el,
         data: {
@@ -16,6 +17,23 @@ let videoPlayers = [];
     })
     videoPlayers.push(player);
 });
+
+setTimeout(() => {
+    const mainVideoEls = document.querySelectorAll(".visual-element--video[data-header=false]");
+
+    [].slice.apply(mainVideoEls).forEach((el, i) => {
+        const player = new VideoPlayer({
+            target: el,
+            data: {
+                loop: true,
+                targetEl: el,
+                mobileSrc: el.getAttribute("data-mobileSrc"),
+                desktopSrc: el.getAttribute("data-desktopSrc")
+            }
+        })
+        videoPlayers.push(player);
+    });
+}, 500);
 
 
 

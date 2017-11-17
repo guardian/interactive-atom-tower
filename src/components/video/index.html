@@ -41,8 +41,16 @@
     {{/if}}
 {{/if}}
 <script>
+
+import tracker from '../../js/tracking.js'
+
 export default {
+
     oncreate() {
+        if(!window.analytics) {
+            window.analytics = tracker();
+        }
+
         if (this.get("targetEl").clientWidth >= 620) {
             this.set({
                 "bestSource": this.get("desktopSrc")
@@ -56,7 +64,8 @@ export default {
         this.set({
             "controls": this.get("targetEl").getAttribute("data-controls") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-controls")),
             "loop": this.get("targetEl").getAttribute("data-loop") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-loop")),
-            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header"))
+            "header": this.get("targetEl").getAttribute("data-header") !== "undefined" && JSON.parse(this.get("targetEl").getAttribute("data-header")),
+            "id": this.get("bestSource").split("/").slice(-1)[0]
         });
 
         const poster = this.get("targetEl").getAttribute("data-poster");
@@ -122,6 +131,14 @@ export default {
                         try {
                             if(!this.get("manuallyPaused")) {
                                 this.refs.video.play();
+
+                                if(!this.get("analyticsSent")) {
+                                    window.analytics.registerEvent('grenfell_video_start', "play_" + this.get("id"));
+
+                                    this.set({
+                                        "analyticsSent": true
+                                    });
+                                }
                             }
                         } catch (err) {}
                     } else {
@@ -158,6 +175,8 @@ export default {
         unmute: function(e) {
             this.refs.video.muted = false;
             this.refs.playSound.style.display = "none";
+
+            window.analytics.registerEvent('grenfell_video_unmute', "unmute_" + this.get("id"));
         },
         playPause: function(e) {
             if(this.get("playing")) {
