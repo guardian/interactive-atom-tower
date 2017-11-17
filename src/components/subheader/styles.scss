@@ -34,8 +34,13 @@
     display: none;
   }
 
+  @include mq($from: mobileLandscape) {
+    left: 20px;
+  }
+
   @include mq($from: desktop) {
     position: absolute;
+    left: 10px;
     top: -12px;
 
     img.mobile {
