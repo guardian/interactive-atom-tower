@@ -34,7 +34,7 @@
             @include mq($from: mobileMedium) {
                 right: -160px;
             }
-            @include mq($from: mobileLandscape) {
+            @include mq($from: 620px) {
                 right: 0px;
             }
         }
