@@ -128,7 +128,7 @@ export default {
                         this.refs.video.currentTime = .01;
                     }
 
-                    if ((this.get("header") && bbox.bottom > 0) || (bbox.top > 0 && bbox.bottom < window.innerHeight)) {
+                    if ((this.get("header") && bbox.bottom > 0) || ((this.get("loop") && !this.get("header")) && bbox.top > -window.innerHeight/2 && bbox.bottom < window.innerHeight*1.5  ) || (bbox.top > 0 && bbox.bottom < window.innerHeight)) {
                         try {
                             if(!this.get("manuallyPaused")) {
                                 this.refs.video.play();
