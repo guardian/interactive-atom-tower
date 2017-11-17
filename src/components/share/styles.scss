@@ -5,6 +5,15 @@
   @include mq(mobileLandscape) {
     margin-left: 16px;
   }
+
+  @include mq(desktop) {
+      border-top: none;
+      border-bottom: none;
+      position: absolute;
+      left: 0px;
+      top: 0;
+      z-index: 1000000;
+  }
 }
 
 .interactive-share {

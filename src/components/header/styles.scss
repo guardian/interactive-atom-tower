@@ -74,18 +74,17 @@
 
 
     @include mq($from: tablet) {
-        background-size: 80px 300px;
-        width: 80px;
-        height: 481px;
-        right: 36.5%;
+      background: url('<%= path %>/assets/header-logo.svg');
+      background-size: cover;
+      width: 196px;
+      height: 114px;
+      top: calc(12vw * (9/16));
+      right: 36.5%;
     }
 
     @include mq($from: desktop) {
-        background: url('<%= path %>/assets/header-logo.svg');
-        background-size: cover;
         width: 244px;
         height: 140px;
-        top: calc(12vw * (9/16));
     }
     @include mq($from: leftCol) {
         width: 278px;

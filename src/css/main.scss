@@ -144,13 +144,24 @@ a:any-link {
             }
             @include mq(desktop) {
                 margin: 0 0 0 180px;
-
             }
 
             @include mq(wide) {
                 margin: 0 0 0 260px;
             }
 
+        }
+
+        // badge styling //
+        .gv-main-column {
+            p:first-child {
+                @include mq(desktop) {
+                    max-width: 520px;
+                }
+                @include mq(leftCol) {
+                    max-width: initial;
+                }
+              }
         }
 
 
