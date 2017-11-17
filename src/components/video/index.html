@@ -177,6 +177,8 @@ export default {
             this.refs.video.muted = false;
             this.refs.playSound.style.display = "none";
 
+            this.refs.video.currentTime = .01;
+
             window.analytics.registerEvent('grenfell_video_unmute', "unmute_" + this.get("id"));
         },
         playPause: function(e) {
