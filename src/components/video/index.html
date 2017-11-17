@@ -86,9 +86,9 @@ export default {
     },
     methods: {
         checkIfInView: function() {
-            if (this.get("scrollPos") !== window.scrollY) {
+            if (this.get("scrollPos") !== window.pageYOffset) {
                 const bbox = this.get("targetEl").getBoundingClientRect();
-                if (bbox.top > -window.innerHeight && bbox.bottom < 2 * window.innerHeight) {
+                if (bbox.top > -(2*window.innerHeight) && bbox.bottom < 2.5 * window.innerHeight) {
                     if (!this.get("shouldLoad")) {
                         this.set({
                             "shouldLoad": true
@@ -123,7 +123,7 @@ export default {
                     }
                 }
 
-                this.set({ "scrollPos": window.scrollY });
+                this.set({ "scrollPos": window.pageYOffset });
             }
 
             setTimeout(() => {
