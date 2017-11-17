@@ -10,11 +10,19 @@
     {{/if}}
 {{else}}
     <div class="video-wrapper">
-        <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
-            {{#if shouldLoad}}
-                <source src="{{bestSource}}" />
-            {{/if}}
-        </video>
+        {{#if poster}}
+            <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" poster="{{poster}}" autoplay={{header}}>
+                {{#if shouldLoad}}
+                    <source src="{{bestSource}}" />
+                {{/if}}
+            </video>
+        {{else}}
+            <video ref:video webkit-playsinline playsinline muted loop={{loop}} preload="none" autoplay={{header}}>
+                {{#if shouldLoad}}
+                    <source src="{{bestSource}}" />
+                {{/if}}
+            </video>
+        {{/if}}
     </div>
     {{#if controls}}
         <div class="g-vam-video-timer-container {{playing ? 'g-vam-video-playing' : 'g-vam-video-paused'}}">
@@ -53,9 +61,13 @@ export default {
 
         const poster = this.get("targetEl").getAttribute("data-poster");
 
-        if(poster) {
+        if(poster !== "undefined") {
             this.set({
                 "poster": poster
+            })
+        } else {
+            this.set({
+                "poster": false
             })
         }
 
@@ -69,6 +81,15 @@ export default {
                 "duration": this.refs.video.duration,
                 "playing": !this.refs.video.paused
             })
+        });
+
+        this.refs.video.addEventListener("ended", () => {
+            this.set({
+                "manuallyPaused": true
+            });
+
+            this.refs.video.pause();
+            this.refs.video.currentTime = .01;
         });
     },
 
@@ -88,7 +109,7 @@ export default {
         checkIfInView: function() {
             if (this.get("scrollPos") !== window.pageYOffset) {
                 const bbox = this.get("targetEl").getBoundingClientRect();
-                if (bbox.top > -(2*window.innerHeight) && bbox.bottom < 2.5 * window.innerHeight) {
+                if (bbox.top > -(window.innerHeight) && bbox.bottom < 2 * window.innerHeight) {
                     if (!this.get("shouldLoad")) {
                         this.set({
                             "shouldLoad": true
@@ -115,11 +136,13 @@ export default {
                         });
 
                         this.refs.video.load();
-                        this.refs.video.play();
 
-                        window.requestAnimationFrame(() => {
-                            this.refs.video.pause();
-                        });
+                        this.refs.video.currentTime = .01;
+                        // this.refs.video.play();
+
+                        // window.requestAnimationFrame(() => {
+                        //     this.refs.video.pause();
+                        // });
                     }
                 }
 
