@@ -38,12 +38,15 @@
 
   .author {
     padding-top: 6px;
+    margin-bottom: 6px;
       p {
+        border-bottom: 1px dotted #dcdcdc;
         font-family: $f-serif-headline;
         weight: 400;
         font-size: 18px;
         line-height: 22px;
         color: #767676;
       }
+
   }
 }
