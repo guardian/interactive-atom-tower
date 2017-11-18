@@ -61,7 +61,7 @@
     width: 106px;
     height: 207px;
     right: 56%;
-    top: calc(80vh * (9/16));
+    top: calc(80vh * (7/16));
 
     @include mq($from: mobileMedium) {
         width: 126px;
@@ -78,7 +78,7 @@
       background-size: cover;
       width: 196px;
       height: 114px;
-      top: calc(12vw * (9/16));
+      top: calc(12vw * (7/16));
       right: 36.5%;
     }
 
@@ -103,5 +103,5 @@
   left: 0;
   z-index: -100;
   color: #fff;
- 
+
 }
