@@ -70,6 +70,7 @@ function loadIframe(el, link){
 }
 
 function init(){
+  //init iframe loading
   let iframes = document.querySelectorAll('.visual-element--iframe');
   for(var i = 0; i < iframes.length; i ++){
     let el = iframes[i];
